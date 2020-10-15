@@ -17,6 +17,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": ["@angular/fire/firestore"
+            ],
             "outputPath": "dist/form",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -121,8 +123,16 @@
               "devServerTarget": "form:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "form"
+    }
+  },
+  "defaultProject": "form",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,0 +1,60 @@
+<div class="wrapper">
+
+
+    <nav>
+           
+          <img src="../../../assets/images/logo.png" alt="logo">
+    
+          <ul>
+              <li>
+                  Home
+              </li>
+              
+          </ul>
+     </nav>
+    
+  
+    
+     </div>
+
+
+<div class="container">
+
+    <h2>Registration</h2>
+
+    <div class="row">
+  <div class="column" style="background-color: #aaa;">
+           
+
+       <form (ngSubmit)="AddUsers(UserData)" #UserData="ngForm">
+
+        <h1>student registration</h1>
+
+        <input name="name" ngModel #name="ngModel" placeholder="Name">
+        <input name="surname" ngModel #name="ngModel" placeholder="Surname">
+        <input name="course" ngModel #name="ngModel" placeholder="Course">
+        <input name="contact" ngModel #name="ngModel" placeholder="Contact">
+        <input name="address" ngModel #name="ngModel" placeholder="Address">
+        <button type="submit">Add Users</button>
+       </form>
+    </div>
+
+    <div class="column" style="background-color: #bbb;">
+
+        <h2>registered</h2>
+        <h2>registered students</h2>
+
+    
+
+        <ul>
+            <li *ngFor="let item of student">
+
+                Details: {{ item.payload.doc.data().name }} {{ item.payload.doc.data().surname }} {{ item.payload.doc.data().course }} {{ item.payload.doc.data().contact }} {{ item.payload.doc.data().address }}
+           <a [routerLink]="['/','student-details',item.payload.doc.id]" routerLinkActivate=  "routerLinkActivate">expand</a>
+           </li>
+        </ul>
+
+</div>
+
+</div>
+</div>

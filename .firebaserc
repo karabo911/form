@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fir-322fb": {
+      "hosting": {
+        "form": [
+          "fir-322fb"
+        ]
+      }
+    }
+  }
+}
